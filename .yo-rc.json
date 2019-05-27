@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "jhipsterOrcl",
+    "packageName": "com.asg.jhipster",
+    "packageFolder": "com/asg/jhipster",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "ca",
+      "en",
+      "es"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.0.1",
+    "jwtSecretKey": "MzgxZjAwNmI5YTBhZWRkNDRjYzMzZGRkNGUxMjY0NGY5YjlhNjA1Zjk0ODc3NjA1MGEzZTBhMWM0ODYyY2U2YTM4NTYwOWRjMTAyM2I2MTVkYzhmMmI1YmUxNzFkNjlmMDZkMjg2NmZhYTE1MDdmOGZhNjVkZjhiZDRlYWFjM2Q=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "javierfjc",
+  "repository-name": "jhipster-orcl"
+}
