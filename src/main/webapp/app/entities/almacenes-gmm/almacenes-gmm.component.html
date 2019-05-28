@@ -20,7 +20,6 @@
             <th><span jhiTranslate="jhipsterOrclApp.almacenes.fechaAlta">Fecha Alta</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.almacenes.estado">Estado</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.almacenes.fechaEstado">Fecha Estado</span></th>
-            <th><span jhiTranslate="jhipsterOrclApp.almacenes.agentes">Agentes</span></th>
             <th></th>
             </tr>
             </thead>
@@ -32,11 +31,6 @@
                 <td>{{almacenes.fechaAlta | date:'mediumDate'}}</td>
                 <td>{{almacenes.estado}}</td>
                 <td>{{almacenes.fechaEstado | date:'mediumDate'}}</td>
-                <td>
-                    <div *ngIf="almacenes.agentesId">
-                        <a [routerLink]="['../agentes-gmm', almacenes.agentesId , 'view' ]" >{{almacenes.agentesId}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

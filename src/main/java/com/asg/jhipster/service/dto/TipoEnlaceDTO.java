@@ -16,8 +16,6 @@ public class TipoEnlaceDTO implements Serializable {
     private String descripcion;
 
 
-    private Long tipoTerminalId;
-
     public Long getId() {
         return id;
     }
@@ -50,14 +48,6 @@ public class TipoEnlaceDTO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Long getTipoTerminalId() {
-        return tipoTerminalId;
-    }
-
-    public void setTipoTerminalId(Long tipoTerminalId) {
-        this.tipoTerminalId = tipoTerminalId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -86,7 +76,6 @@ public class TipoEnlaceDTO implements Serializable {
             ", codigo='" + getCodigo() + "'" +
             ", titulo='" + getTitulo() + "'" +
             ", descripcion='" + getDescripcion() + "'" +
-            ", tipoTerminal=" + getTipoTerminalId() +
             "}";
     }
 }

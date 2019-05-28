@@ -18,7 +18,6 @@
             <th><span jhiTranslate="jhipsterOrclApp.tipoArea.codigo">Codigo</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoArea.titulo">Titulo</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoArea.descripcion">Descripcion</span></th>
-            <th><span jhiTranslate="jhipsterOrclApp.tipoArea.agentes">Agentes</span></th>
             <th></th>
             </tr>
             </thead>
@@ -28,11 +27,6 @@
                 <td>{{tipoArea.codigo}}</td>
                 <td>{{tipoArea.titulo}}</td>
                 <td>{{tipoArea.descripcion}}</td>
-                <td>
-                    <div *ngIf="tipoArea.agentesId">
-                        <a [routerLink]="['../agentes-gmm', tipoArea.agentesId , 'view' ]" >{{tipoArea.agentesId}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

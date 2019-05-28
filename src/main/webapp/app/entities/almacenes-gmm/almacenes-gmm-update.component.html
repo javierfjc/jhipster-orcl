@@ -43,13 +43,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.agentes" for="field_agentes">Agentes</label>
-                    <select class="form-control" id="field_agentes" name="agentes" formControlName="agentesId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="agentesOption.id" *ngFor="let agentesOption of agentes; trackBy: trackAgentesById">{{agentesOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

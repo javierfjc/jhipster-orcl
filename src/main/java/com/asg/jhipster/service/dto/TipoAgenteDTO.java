@@ -16,8 +16,6 @@ public class TipoAgenteDTO implements Serializable {
     private String descripcion;
 
 
-    private Long agentesId;
-
     public Long getId() {
         return id;
     }
@@ -50,14 +48,6 @@ public class TipoAgenteDTO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Long getAgentesId() {
-        return agentesId;
-    }
-
-    public void setAgentesId(Long agentesId) {
-        this.agentesId = agentesId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -86,7 +76,6 @@ public class TipoAgenteDTO implements Serializable {
             ", codigo='" + getCodigo() + "'" +
             ", titulo='" + getTitulo() + "'" +
             ", descripcion='" + getDescripcion() + "'" +
-            ", agentes=" + getAgentesId() +
             "}";
     }
 }

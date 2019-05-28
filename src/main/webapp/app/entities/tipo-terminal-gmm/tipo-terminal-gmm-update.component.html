@@ -76,10 +76,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes" for="field_agentes">Agentes</label>
-                    <select class="form-control" id="field_agentes" name="agentes" formControlName="agentesId">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoEnlace" for="field_tipoEnlace">Tipo Enlace</label>
+                    <select class="form-control" id="field_tipoEnlace" name="tipoEnlace" formControlName="tipoEnlaceId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="agentesOption.id" *ngFor="let agentesOption of agentes; trackBy: trackAgentesById">{{agentesOption.id}}</option>
+                        <option [ngValue]="tipoEnlaceOption.id" *ngFor="let tipoEnlaceOption of tipoenlaces; trackBy: trackTipoEnlaceById">{{tipoEnlaceOption.id}}</option>
                     </select>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
 
 export interface IEmpresasGmm {
   id?: number;
@@ -10,7 +11,7 @@ export interface IEmpresasGmm {
   estado?: string;
   fechaEstado?: Moment;
   exclusiva?: string;
-  agentesId?: number;
+  agentes?: IAgentesGmm[];
 }
 
 export class EmpresasGmm implements IEmpresasGmm {
@@ -24,6 +25,6 @@ export class EmpresasGmm implements IEmpresasGmm {
     public estado?: string,
     public fechaEstado?: Moment,
     public exclusiva?: string,
-    public agentesId?: number
+    public agentes?: IAgentesGmm[]
   ) {}
 }

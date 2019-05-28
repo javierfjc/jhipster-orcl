@@ -27,8 +27,6 @@ public class EmpresasDTO implements Serializable {
     private String exclusiva;
 
 
-    private Long agentesId;
-
     public Long getId() {
         return id;
     }
@@ -101,14 +99,6 @@ public class EmpresasDTO implements Serializable {
         this.exclusiva = exclusiva;
     }
 
-    public Long getAgentesId() {
-        return agentesId;
-    }
-
-    public void setAgentesId(Long agentesId) {
-        this.agentesId = agentesId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -142,7 +132,6 @@ public class EmpresasDTO implements Serializable {
             ", estado='" + getEstado() + "'" +
             ", fechaEstado='" + getFechaEstado() + "'" +
             ", exclusiva='" + getExclusiva() + "'" +
-            ", agentes=" + getAgentesId() +
             "}";
     }
 }

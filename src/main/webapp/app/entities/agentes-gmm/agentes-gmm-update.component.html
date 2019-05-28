@@ -55,6 +55,41 @@
                     </select>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.agentes.tipoTerminal" for="field_tipoTerminal">Tipo Terminal</label>
+                    <select class="form-control" id="field_tipoTerminal" name="tipoTerminal" formControlName="tipoTerminalId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoTerminalOption.id" *ngFor="let tipoTerminalOption of tipoterminals; trackBy: trackTipoTerminalById">{{tipoTerminalOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.agentes.tipoArea" for="field_tipoArea">Tipo Area</label>
+                    <select class="form-control" id="field_tipoArea" name="tipoArea" formControlName="tipoAreaId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoAreaOption.id" *ngFor="let tipoAreaOption of tipoareas; trackBy: trackTipoAreaById">{{tipoAreaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.agentes.tipoAgente" for="field_tipoAgente">Tipo Agente</label>
+                    <select class="form-control" id="field_tipoAgente" name="tipoAgente" formControlName="tipoAgenteId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoAgenteOption.id" *ngFor="let tipoAgenteOption of tipoagentes; trackBy: trackTipoAgenteById">{{tipoAgenteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.agentes.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresaId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresasOption.id" *ngFor="let empresasOption of empresas; trackBy: trackEmpresasById">{{empresasOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.agentes.almacen" for="field_almacen">Almacen</label>
+                    <select class="form-control" id="field_almacen" name="almacen" formControlName="almacenId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="almacenesOption.id" *ngFor="let almacenesOption of almacenes; trackBy: trackAlmacenesById">{{almacenesOption.id}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

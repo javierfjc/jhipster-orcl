@@ -42,8 +42,7 @@ describe('TipoEnlace e2e test', () => {
     await promise.all([
       tipoEnlaceUpdatePage.setCodigoInput('codigo'),
       tipoEnlaceUpdatePage.setTituloInput('titulo'),
-      tipoEnlaceUpdatePage.setDescripcionInput('descripcion'),
-      tipoEnlaceUpdatePage.tipoTerminalSelectLastOption()
+      tipoEnlaceUpdatePage.setDescripcionInput('descripcion')
     ]);
     expect(await tipoEnlaceUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await tipoEnlaceUpdatePage.getTituloInput()).to.eq('titulo', 'Expected Titulo value to be equals to titulo');

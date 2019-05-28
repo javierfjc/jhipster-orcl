@@ -18,7 +18,6 @@
             <th><span jhiTranslate="jhipsterOrclApp.tipoEnlace.codigo">Codigo</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoEnlace.titulo">Titulo</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoEnlace.descripcion">Descripcion</span></th>
-            <th><span jhiTranslate="jhipsterOrclApp.tipoEnlace.tipoTerminal">Tipo Terminal</span></th>
             <th></th>
             </tr>
             </thead>
@@ -28,11 +27,6 @@
                 <td>{{tipoEnlace.codigo}}</td>
                 <td>{{tipoEnlace.titulo}}</td>
                 <td>{{tipoEnlace.descripcion}}</td>
-                <td>
-                    <div *ngIf="tipoEnlace.tipoTerminalId">
-                        <a [routerLink]="['../tipo-terminal-gmm', tipoEnlace.tipoTerminalId , 'view' ]" >{{tipoEnlace.tipoTerminalId}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

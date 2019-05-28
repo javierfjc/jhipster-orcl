@@ -33,6 +33,36 @@
                 <dd>
                     <span jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + agentes.tpRegalos}}">{{agentes.tpRegalos}}</span>
                 </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.tipoTerminal">Tipo Terminal</span></dt>
+                <dd>
+                    <div *ngIf="agentes.tipoTerminalId">
+                        <a [routerLink]="['/tipo-terminal-gmm', agentes.tipoTerminalId, 'view']">{{agentes.tipoTerminalId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.tipoArea">Tipo Area</span></dt>
+                <dd>
+                    <div *ngIf="agentes.tipoAreaId">
+                        <a [routerLink]="['/tipo-area-gmm', agentes.tipoAreaId, 'view']">{{agentes.tipoAreaId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.tipoAgente">Tipo Agente</span></dt>
+                <dd>
+                    <div *ngIf="agentes.tipoAgenteId">
+                        <a [routerLink]="['/tipo-agente-gmm', agentes.tipoAgenteId, 'view']">{{agentes.tipoAgenteId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="agentes.empresaId">
+                        <a [routerLink]="['/empresas-gmm', agentes.empresaId, 'view']">{{agentes.empresaId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.almacen">Almacen</span></dt>
+                <dd>
+                    <div *ngIf="agentes.almacenId">
+                        <a [routerLink]="['/almacenes-gmm', agentes.almacenId, 'view']">{{agentes.almacenId}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

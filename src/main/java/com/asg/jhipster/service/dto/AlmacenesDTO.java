@@ -21,8 +21,6 @@ public class AlmacenesDTO implements Serializable {
     private LocalDate fechaEstado;
 
 
-    private Long agentesId;
-
     public Long getId() {
         return id;
     }
@@ -71,14 +69,6 @@ public class AlmacenesDTO implements Serializable {
         this.fechaEstado = fechaEstado;
     }
 
-    public Long getAgentesId() {
-        return agentesId;
-    }
-
-    public void setAgentesId(Long agentesId) {
-        this.agentesId = agentesId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -109,7 +99,6 @@ public class AlmacenesDTO implements Serializable {
             ", fechaAlta='" + getFechaAlta() + "'" +
             ", estado='" + getEstado() + "'" +
             ", fechaEstado='" + getFechaEstado() + "'" +
-            ", agentes=" + getAgentesId() +
             "}";
     }
 }

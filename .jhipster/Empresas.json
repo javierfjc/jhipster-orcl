@@ -36,10 +36,10 @@
     ],
     "relationships": [
         {
-            "relationshipName": "agentes",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agentes",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "empresa",
+            "relationshipName": "agente"
         }
     ],
     "changelogDate": "20190528071143",

@@ -54,14 +54,15 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "tipoEnlace",
+            "otherEntityName": "agentes",
             "otherEntityRelationshipName": "tipoTerminal",
-            "relationshipName": "tipoEnlace"
+            "relationshipName": "agente"
         },
         {
-            "relationshipName": "agentes",
-            "otherEntityName": "agentes",
             "relationshipType": "many-to-one",
+            "otherEntityName": "tipoEnlace",
+            "otherEntityRelationshipName": "tipoTerminal",
+            "relationshipName": "tipoEnlace",
             "otherEntityField": "id"
         }
     ],

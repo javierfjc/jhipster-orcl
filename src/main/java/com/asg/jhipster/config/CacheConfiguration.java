@@ -56,6 +56,12 @@ public class CacheConfiguration {
             createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".tipoAgentes");
             createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".empresas");
             createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".almacens");
+            createCache(cm, com.asg.jhipster.domain.TipoAgente.class.getName() + ".agentes");
+            createCache(cm, com.asg.jhipster.domain.TipoArea.class.getName() + ".agentes");
+            createCache(cm, com.asg.jhipster.domain.TipoEnlace.class.getName() + ".tipoTerminals");
+            createCache(cm, com.asg.jhipster.domain.TipoTerminal.class.getName() + ".agentes");
+            createCache(cm, com.asg.jhipster.domain.Almacenes.class.getName() + ".agentes");
+            createCache(cm, com.asg.jhipster.domain.Empresas.class.getName() + ".agentes");
             // jhipster-needle-ehcache-add-entry
         };
     }

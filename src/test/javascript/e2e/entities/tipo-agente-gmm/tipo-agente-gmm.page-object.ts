@@ -29,7 +29,6 @@ export class TipoAgenteUpdatePage {
   codigoInput = element(by.id('field_codigo'));
   tituloInput = element(by.id('field_titulo'));
   descripcionInput = element(by.id('field_descripcion'));
-  agentesSelect = element(by.id('field_agentes'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -57,25 +56,6 @@ export class TipoAgenteUpdatePage {
 
   async getDescripcionInput() {
     return await this.descripcionInput.getAttribute('value');
-  }
-
-  async agentesSelectLastOption(timeout?: number) {
-    await this.agentesSelect
-      .all(by.tagName('option'))
-      .last()
-      .click();
-  }
-
-  async agentesSelectOption(option) {
-    await this.agentesSelect.sendKeys(option);
-  }
-
-  getAgentesSelect(): ElementFinder {
-    return this.agentesSelect;
-  }
-
-  async getAgentesSelectedOption() {
-    return await this.agentesSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

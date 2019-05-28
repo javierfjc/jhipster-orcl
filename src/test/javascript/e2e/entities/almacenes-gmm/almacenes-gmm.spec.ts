@@ -44,8 +44,7 @@ describe('Almacenes e2e test', () => {
       almacenesUpdatePage.setTituloInput('titulo'),
       almacenesUpdatePage.setFechaAltaInput('2000-12-31'),
       almacenesUpdatePage.setEstadoInput('estado'),
-      almacenesUpdatePage.setFechaEstadoInput('2000-12-31'),
-      almacenesUpdatePage.agentesSelectLastOption()
+      almacenesUpdatePage.setFechaEstadoInput('2000-12-31')
     ]);
     expect(await almacenesUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await almacenesUpdatePage.getTituloInput()).to.eq('titulo', 'Expected Titulo value to be equals to titulo');

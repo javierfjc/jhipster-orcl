@@ -23,7 +23,6 @@
             <th jhiSortBy="estado"><span jhiTranslate="jhipsterOrclApp.empresas.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="fechaEstado"><span jhiTranslate="jhipsterOrclApp.empresas.fechaEstado">Fecha Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="exclusiva"><span jhiTranslate="jhipsterOrclApp.empresas.exclusiva">Exclusiva</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agentesId"><span jhiTranslate="jhipsterOrclApp.empresas.agentes">Agentes</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -38,11 +37,6 @@
                 <td>{{empresas.estado}}</td>
                 <td>{{empresas.fechaEstado | date:'mediumDate'}}</td>
                 <td>{{empresas.exclusiva}}</td>
-                <td>
-                    <div *ngIf="empresas.agentesId">
-                        <a [routerLink]="['../agentes-gmm', empresas.agentesId , 'view' ]" >{{empresas.agentesId}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

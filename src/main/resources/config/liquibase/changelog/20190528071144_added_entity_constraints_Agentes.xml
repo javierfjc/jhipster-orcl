@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Agentes.
+    -->
+    <changeSet id="20190528071144-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tipo_terminal_id"
+                                 baseTableName="agentes"
+                                 constraintName="fk_agentes_tipo_terminal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_terminal"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_area_id"
+                                 baseTableName="agentes"
+                                 constraintName="fk_agentes_tipo_area_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_area"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_agente_id"
+                                 baseTableName="agentes"
+                                 constraintName="fk_agentes_tipo_agente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_agente"/>
+
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="agentes"
+                                 constraintName="fk_agentes_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresas"/>
+
+        <addForeignKeyConstraint baseColumnNames="almacen_id"
+                                 baseTableName="agentes"
+                                 constraintName="fk_agentes_almacen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="almacenes"/>
+
+    </changeSet>
+</databaseChangeLog>

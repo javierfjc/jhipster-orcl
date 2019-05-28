@@ -26,6 +26,16 @@ public class AgentesDTO implements Serializable {
     private DominioSiNo tpRegalos;
 
 
+    private Long tipoTerminalId;
+
+    private Long tipoAreaId;
+
+    private Long tipoAgenteId;
+
+    private Long empresaId;
+
+    private Long almacenId;
+
     public Long getId() {
         return id;
     }
@@ -90,6 +100,46 @@ public class AgentesDTO implements Serializable {
         this.tpRegalos = tpRegalos;
     }
 
+    public Long getTipoTerminalId() {
+        return tipoTerminalId;
+    }
+
+    public void setTipoTerminalId(Long tipoTerminalId) {
+        this.tipoTerminalId = tipoTerminalId;
+    }
+
+    public Long getTipoAreaId() {
+        return tipoAreaId;
+    }
+
+    public void setTipoAreaId(Long tipoAreaId) {
+        this.tipoAreaId = tipoAreaId;
+    }
+
+    public Long getTipoAgenteId() {
+        return tipoAgenteId;
+    }
+
+    public void setTipoAgenteId(Long tipoAgenteId) {
+        this.tipoAgenteId = tipoAgenteId;
+    }
+
+    public Long getEmpresaId() {
+        return empresaId;
+    }
+
+    public void setEmpresaId(Long empresasId) {
+        this.empresaId = empresasId;
+    }
+
+    public Long getAlmacenId() {
+        return almacenId;
+    }
+
+    public void setAlmacenId(Long almacenesId) {
+        this.almacenId = almacenesId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -122,6 +172,11 @@ public class AgentesDTO implements Serializable {
             ", fechaEstado='" + getFechaEstado() + "'" +
             ", tpNumero='" + getTpNumero() + "'" +
             ", tpRegalos='" + getTpRegalos() + "'" +
+            ", tipoTerminal=" + getTipoTerminalId() +
+            ", tipoArea=" + getTipoAreaId() +
+            ", tipoAgente=" + getTipoAgenteId() +
+            ", empresa=" + getEmpresaId() +
+            ", almacen=" + getAlmacenId() +
             "}";
     }
 }

@@ -72,11 +72,11 @@ public class TipoTerminal implements Serializable {
 
     @OneToMany(mappedBy = "tipoTerminal")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<TipoEnlace> tipoEnlaces = new HashSet<>();
+    private Set<Agentes> agentes = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("tipoTerminals")
-    private Agentes agentes;
+    private TipoEnlace tipoEnlace;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -230,42 +230,42 @@ public class TipoTerminal implements Serializable {
         this.tipoImporteDto3 = tipoImporteDto3;
     }
 
-    public Set<TipoEnlace> getTipoEnlaces() {
-        return tipoEnlaces;
-    }
-
-    public TipoTerminal tipoEnlaces(Set<TipoEnlace> tipoEnlaces) {
-        this.tipoEnlaces = tipoEnlaces;
-        return this;
-    }
-
-    public TipoTerminal addTipoEnlace(TipoEnlace tipoEnlace) {
-        this.tipoEnlaces.add(tipoEnlace);
-        tipoEnlace.setTipoTerminal(this);
-        return this;
-    }
-
-    public TipoTerminal removeTipoEnlace(TipoEnlace tipoEnlace) {
-        this.tipoEnlaces.remove(tipoEnlace);
-        tipoEnlace.setTipoTerminal(null);
-        return this;
-    }
-
-    public void setTipoEnlaces(Set<TipoEnlace> tipoEnlaces) {
-        this.tipoEnlaces = tipoEnlaces;
-    }
-
-    public Agentes getAgentes() {
+    public Set<Agentes> getAgentes() {
         return agentes;
     }
 
-    public TipoTerminal agentes(Agentes agentes) {
+    public TipoTerminal agentes(Set<Agentes> agentes) {
         this.agentes = agentes;
         return this;
     }
 
-    public void setAgentes(Agentes agentes) {
+    public TipoTerminal addAgente(Agentes agentes) {
+        this.agentes.add(agentes);
+        agentes.setTipoTerminal(this);
+        return this;
+    }
+
+    public TipoTerminal removeAgente(Agentes agentes) {
+        this.agentes.remove(agentes);
+        agentes.setTipoTerminal(null);
+        return this;
+    }
+
+    public void setAgentes(Set<Agentes> agentes) {
         this.agentes = agentes;
+    }
+
+    public TipoEnlace getTipoEnlace() {
+        return tipoEnlace;
+    }
+
+    public TipoTerminal tipoEnlace(TipoEnlace tipoEnlace) {
+        this.tipoEnlace = tipoEnlace;
+        return this;
+    }
+
+    public void setTipoEnlace(TipoEnlace tipoEnlace) {
+        this.tipoEnlace = tipoEnlace;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

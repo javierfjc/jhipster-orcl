@@ -49,10 +49,10 @@
                 <dd>
                     <span jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto3}}">{{tipoTerminal.tipoImporteDto3}}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes">Agentes</span></dt>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoEnlace">Tipo Enlace</span></dt>
                 <dd>
-                    <div *ngIf="tipoTerminal.agentesId">
-                        <a [routerLink]="['/agentes-gmm', tipoTerminal.agentesId, 'view']">{{tipoTerminal.agentesId}}</a>
+                    <div *ngIf="tipoTerminal.tipoEnlaceId">
+                        <a [routerLink]="['/tipo-enlace-gmm', tipoTerminal.tipoEnlaceId, 'view']">{{tipoTerminal.tipoEnlaceId}}</a>
                     </div>
                 </dd>
             </dl>
