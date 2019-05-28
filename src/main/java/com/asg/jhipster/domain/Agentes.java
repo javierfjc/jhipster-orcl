@@ -1,7 +1,7 @@
 package com.asg.jhipster.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -9,8 +9,6 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 import com.asg.jhipster.domain.enumeration.DominioSiNo;
@@ -52,25 +50,25 @@ public class Agentes implements Serializable {
     @Column(name = "tp_regalos")
     private DominioSiNo tpRegalos;
 
-    @OneToMany(mappedBy = "agentes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<TipoTerminal> tipoTerminals = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agentes")
+    private TipoTerminal tipoTerminal;
 
-    @OneToMany(mappedBy = "agentes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<TipoArea> tipoAreas = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agentes")
+    private TipoArea tipoArea;
 
-    @OneToMany(mappedBy = "agentes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<TipoAgente> tipoAgentes = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agentes")
+    private TipoAgente tipoAgente;
 
-    @OneToMany(mappedBy = "agentes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Empresas> empresas = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agentes")
+    private Empresas empresa;
 
-    @OneToMany(mappedBy = "agentes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Almacenes> almacens = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agentes")
+    private Almacenes almacen;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -172,129 +170,69 @@ public class Agentes implements Serializable {
         this.tpRegalos = tpRegalos;
     }
 
-    public Set<TipoTerminal> getTipoTerminals() {
-        return tipoTerminals;
+    public TipoTerminal getTipoTerminal() {
+        return tipoTerminal;
     }
 
-    public Agentes tipoTerminals(Set<TipoTerminal> tipoTerminals) {
-        this.tipoTerminals = tipoTerminals;
+    public Agentes tipoTerminal(TipoTerminal tipoTerminal) {
+        this.tipoTerminal = tipoTerminal;
         return this;
     }
 
-    public Agentes addTipoTerminal(TipoTerminal tipoTerminal) {
-        this.tipoTerminals.add(tipoTerminal);
-        tipoTerminal.setAgentes(this);
+    public void setTipoTerminal(TipoTerminal tipoTerminal) {
+        this.tipoTerminal = tipoTerminal;
+    }
+
+    public TipoArea getTipoArea() {
+        return tipoArea;
+    }
+
+    public Agentes tipoArea(TipoArea tipoArea) {
+        this.tipoArea = tipoArea;
         return this;
     }
 
-    public Agentes removeTipoTerminal(TipoTerminal tipoTerminal) {
-        this.tipoTerminals.remove(tipoTerminal);
-        tipoTerminal.setAgentes(null);
+    public void setTipoArea(TipoArea tipoArea) {
+        this.tipoArea = tipoArea;
+    }
+
+    public TipoAgente getTipoAgente() {
+        return tipoAgente;
+    }
+
+    public Agentes tipoAgente(TipoAgente tipoAgente) {
+        this.tipoAgente = tipoAgente;
         return this;
     }
 
-    public void setTipoTerminals(Set<TipoTerminal> tipoTerminals) {
-        this.tipoTerminals = tipoTerminals;
+    public void setTipoAgente(TipoAgente tipoAgente) {
+        this.tipoAgente = tipoAgente;
     }
 
-    public Set<TipoArea> getTipoAreas() {
-        return tipoAreas;
+    public Empresas getEmpresa() {
+        return empresa;
     }
 
-    public Agentes tipoAreas(Set<TipoArea> tipoAreas) {
-        this.tipoAreas = tipoAreas;
+    public Agentes empresa(Empresas empresas) {
+        this.empresa = empresas;
         return this;
     }
 
-    public Agentes addTipoArea(TipoArea tipoArea) {
-        this.tipoAreas.add(tipoArea);
-        tipoArea.setAgentes(this);
+    public void setEmpresa(Empresas empresas) {
+        this.empresa = empresas;
+    }
+
+    public Almacenes getAlmacen() {
+        return almacen;
+    }
+
+    public Agentes almacen(Almacenes almacenes) {
+        this.almacen = almacenes;
         return this;
     }
 
-    public Agentes removeTipoArea(TipoArea tipoArea) {
-        this.tipoAreas.remove(tipoArea);
-        tipoArea.setAgentes(null);
-        return this;
-    }
-
-    public void setTipoAreas(Set<TipoArea> tipoAreas) {
-        this.tipoAreas = tipoAreas;
-    }
-
-    public Set<TipoAgente> getTipoAgentes() {
-        return tipoAgentes;
-    }
-
-    public Agentes tipoAgentes(Set<TipoAgente> tipoAgentes) {
-        this.tipoAgentes = tipoAgentes;
-        return this;
-    }
-
-    public Agentes addTipoAgente(TipoAgente tipoAgente) {
-        this.tipoAgentes.add(tipoAgente);
-        tipoAgente.setAgentes(this);
-        return this;
-    }
-
-    public Agentes removeTipoAgente(TipoAgente tipoAgente) {
-        this.tipoAgentes.remove(tipoAgente);
-        tipoAgente.setAgentes(null);
-        return this;
-    }
-
-    public void setTipoAgentes(Set<TipoAgente> tipoAgentes) {
-        this.tipoAgentes = tipoAgentes;
-    }
-
-    public Set<Empresas> getEmpresas() {
-        return empresas;
-    }
-
-    public Agentes empresas(Set<Empresas> empresas) {
-        this.empresas = empresas;
-        return this;
-    }
-
-    public Agentes addEmpresa(Empresas empresas) {
-        this.empresas.add(empresas);
-        empresas.setAgentes(this);
-        return this;
-    }
-
-    public Agentes removeEmpresa(Empresas empresas) {
-        this.empresas.remove(empresas);
-        empresas.setAgentes(null);
-        return this;
-    }
-
-    public void setEmpresas(Set<Empresas> empresas) {
-        this.empresas = empresas;
-    }
-
-    public Set<Almacenes> getAlmacens() {
-        return almacens;
-    }
-
-    public Agentes almacens(Set<Almacenes> almacenes) {
-        this.almacens = almacenes;
-        return this;
-    }
-
-    public Agentes addAlmacen(Almacenes almacenes) {
-        this.almacens.add(almacenes);
-        almacenes.setAgentes(this);
-        return this;
-    }
-
-    public Agentes removeAlmacen(Almacenes almacenes) {
-        this.almacens.remove(almacenes);
-        almacenes.setAgentes(null);
-        return this;
-    }
-
-    public void setAlmacens(Set<Almacenes> almacenes) {
-        this.almacens = almacenes;
+    public void setAlmacen(Almacenes almacenes) {
+        this.almacen = almacenes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

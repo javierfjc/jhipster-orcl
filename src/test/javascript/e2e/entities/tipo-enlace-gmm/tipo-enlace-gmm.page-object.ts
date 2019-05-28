@@ -29,7 +29,6 @@ export class TipoEnlaceUpdatePage {
   codigoInput = element(by.id('field_codigo'));
   tituloInput = element(by.id('field_titulo'));
   descripcionInput = element(by.id('field_descripcion'));
-  tipoTerminalSelect = element(by.id('field_tipoTerminal'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -57,25 +56,6 @@ export class TipoEnlaceUpdatePage {
 
   async getDescripcionInput() {
     return await this.descripcionInput.getAttribute('value');
-  }
-
-  async tipoTerminalSelectLastOption(timeout?: number) {
-    await this.tipoTerminalSelect
-      .all(by.tagName('option'))
-      .last()
-      .click();
-  }
-
-  async tipoTerminalSelectOption(option) {
-    await this.tipoTerminalSelect.sendKeys(option);
-  }
-
-  getTipoTerminalSelect(): ElementFinder {
-    return this.tipoTerminalSelect;
-  }
-
-  async getTipoTerminalSelectedOption() {
-    return await this.tipoTerminalSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

@@ -1,7 +1,7 @@
 package com.asg.jhipster.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -9,6 +9,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -50,9 +52,9 @@ public class Empresas implements Serializable {
     @Column(name = "exclusiva")
     private String exclusiva;
 
-    @ManyToOne
-    @JsonIgnoreProperties("empresas")
-    private Agentes agentes;
+    @OneToMany(mappedBy = "empresa")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Agentes> agentes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -167,16 +169,28 @@ public class Empresas implements Serializable {
         this.exclusiva = exclusiva;
     }
 
-    public Agentes getAgentes() {
+    public Set<Agentes> getAgentes() {
         return agentes;
     }
 
-    public Empresas agentes(Agentes agentes) {
+    public Empresas agentes(Set<Agentes> agentes) {
         this.agentes = agentes;
         return this;
     }
 
-    public void setAgentes(Agentes agentes) {
+    public Empresas addAgente(Agentes agentes) {
+        this.agentes.add(agentes);
+        agentes.setEmpresa(this);
+        return this;
+    }
+
+    public Empresas removeAgente(Agentes agentes) {
+        this.agentes.remove(agentes);
+        agentes.setEmpresa(null);
+        return this;
+    }
+
+    public void setAgentes(Set<Agentes> agentes) {
         this.agentes = agentes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

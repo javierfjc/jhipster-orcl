@@ -3,13 +3,9 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { JhiAlertService } from 'ng-jhipster';
 import { IEmpresasGmm, EmpresasGmm } from 'app/shared/model/empresas-gmm.model';
 import { EmpresasGmmService } from './empresas-gmm.service';
-import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
-import { AgentesGmmService } from 'app/entities/agentes-gmm';
 
 @Component({
   selector: 'jhi-empresas-gmm-update',
@@ -18,8 +14,6 @@ import { AgentesGmmService } from 'app/entities/agentes-gmm';
 export class EmpresasGmmUpdateComponent implements OnInit {
   empresas: IEmpresasGmm;
   isSaving: boolean;
-
-  agentes: IAgentesGmm[];
   fechaAltaDp: any;
   fechaEstadoDp: any;
 
@@ -32,17 +26,10 @@ export class EmpresasGmmUpdateComponent implements OnInit {
     fechaAlta: [],
     estado: [],
     fechaEstado: [],
-    exclusiva: [],
-    agentesId: []
+    exclusiva: []
   });
 
-  constructor(
-    protected jhiAlertService: JhiAlertService,
-    protected empresasService: EmpresasGmmService,
-    protected agentesService: AgentesGmmService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected empresasService: EmpresasGmmService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.isSaving = false;
@@ -50,13 +37,6 @@ export class EmpresasGmmUpdateComponent implements OnInit {
       this.updateForm(empresas);
       this.empresas = empresas;
     });
-    this.agentesService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IAgentesGmm[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgentesGmm[]>) => response.body)
-      )
-      .subscribe((res: IAgentesGmm[]) => (this.agentes = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(empresas: IEmpresasGmm) {
@@ -69,8 +49,7 @@ export class EmpresasGmmUpdateComponent implements OnInit {
       fechaAlta: empresas.fechaAlta,
       estado: empresas.estado,
       fechaEstado: empresas.fechaEstado,
-      exclusiva: empresas.exclusiva,
-      agentesId: empresas.agentesId
+      exclusiva: empresas.exclusiva
     });
   }
 
@@ -99,8 +78,7 @@ export class EmpresasGmmUpdateComponent implements OnInit {
       fechaAlta: this.editForm.get(['fechaAlta']).value,
       estado: this.editForm.get(['estado']).value,
       fechaEstado: this.editForm.get(['fechaEstado']).value,
-      exclusiva: this.editForm.get(['exclusiva']).value,
-      agentesId: this.editForm.get(['agentesId']).value
+      exclusiva: this.editForm.get(['exclusiva']).value
     };
     return entity;
   }
@@ -116,12 +94,5 @@ export class EmpresasGmmUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
-  }
-  protected onError(errorMessage: string) {
-    this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackAgentesById(index: number, item: IAgentesGmm) {
-    return item.id;
   }
 }

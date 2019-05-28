@@ -1,11 +1,19 @@
+import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
+
 export interface ITipoAgenteGmm {
   id?: number;
   codigo?: string;
   titulo?: string;
   descripcion?: string;
-  agentesId?: number;
+  agentes?: IAgentesGmm[];
 }
 
 export class TipoAgenteGmm implements ITipoAgenteGmm {
-  constructor(public id?: number, public codigo?: string, public titulo?: string, public descripcion?: string, public agentesId?: number) {}
+  constructor(
+    public id?: number,
+    public codigo?: string,
+    public titulo?: string,
+    public descripcion?: string,
+    public agentes?: IAgentesGmm[]
+  ) {}
 }

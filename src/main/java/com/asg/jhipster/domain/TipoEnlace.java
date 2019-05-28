@@ -1,13 +1,15 @@
 package com.asg.jhipster.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -34,9 +36,9 @@ public class TipoEnlace implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne
-    @JsonIgnoreProperties("tipoEnlaces")
-    private TipoTerminal tipoTerminal;
+    @OneToMany(mappedBy = "tipoEnlace")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<TipoTerminal> tipoTerminals = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -86,17 +88,29 @@ public class TipoEnlace implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public TipoTerminal getTipoTerminal() {
-        return tipoTerminal;
+    public Set<TipoTerminal> getTipoTerminals() {
+        return tipoTerminals;
     }
 
-    public TipoEnlace tipoTerminal(TipoTerminal tipoTerminal) {
-        this.tipoTerminal = tipoTerminal;
+    public TipoEnlace tipoTerminals(Set<TipoTerminal> tipoTerminals) {
+        this.tipoTerminals = tipoTerminals;
         return this;
     }
 
-    public void setTipoTerminal(TipoTerminal tipoTerminal) {
-        this.tipoTerminal = tipoTerminal;
+    public TipoEnlace addTipoTerminal(TipoTerminal tipoTerminal) {
+        this.tipoTerminals.add(tipoTerminal);
+        tipoTerminal.setTipoEnlace(this);
+        return this;
+    }
+
+    public TipoEnlace removeTipoTerminal(TipoTerminal tipoTerminal) {
+        this.tipoTerminals.remove(tipoTerminal);
+        tipoTerminal.setTipoEnlace(null);
+        return this;
+    }
+
+    public void setTipoTerminals(Set<TipoTerminal> tipoTerminals) {
+        this.tipoTerminals = tipoTerminals;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

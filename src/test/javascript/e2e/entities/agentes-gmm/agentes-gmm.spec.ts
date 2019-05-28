@@ -46,7 +46,12 @@ describe('Agentes e2e test', () => {
       agentesUpdatePage.setEstadoInput('estado'),
       agentesUpdatePage.setFechaEstadoInput('2000-12-31'),
       agentesUpdatePage.setTpNumeroInput('tpNumero'),
-      agentesUpdatePage.tpRegalosSelectLastOption()
+      agentesUpdatePage.tpRegalosSelectLastOption(),
+      agentesUpdatePage.tipoTerminalSelectLastOption(),
+      agentesUpdatePage.tipoAreaSelectLastOption(),
+      agentesUpdatePage.tipoAgenteSelectLastOption(),
+      agentesUpdatePage.empresaSelectLastOption(),
+      agentesUpdatePage.almacenSelectLastOption()
     ]);
     expect(await agentesUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await agentesUpdatePage.getDescripcionInput()).to.eq('descripcion', 'Expected Descripcion value to be equals to descripcion');

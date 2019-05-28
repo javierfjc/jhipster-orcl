@@ -1,13 +1,15 @@
 package com.asg.jhipster.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -34,9 +36,9 @@ public class TipoArea implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne
-    @JsonIgnoreProperties("tipoAreas")
-    private Agentes agentes;
+    @OneToMany(mappedBy = "tipoArea")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Agentes> agentes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -86,16 +88,28 @@ public class TipoArea implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Agentes getAgentes() {
+    public Set<Agentes> getAgentes() {
         return agentes;
     }
 
-    public TipoArea agentes(Agentes agentes) {
+    public TipoArea agentes(Set<Agentes> agentes) {
         this.agentes = agentes;
         return this;
     }
 
-    public void setAgentes(Agentes agentes) {
+    public TipoArea addAgente(Agentes agentes) {
+        this.agentes.add(agentes);
+        agentes.setTipoArea(this);
+        return this;
+    }
+
+    public TipoArea removeAgente(Agentes agentes) {
+        this.agentes.remove(agentes);
+        agentes.setTipoArea(null);
+        return this;
+    }
+
+    public void setAgentes(Set<Agentes> agentes) {
         this.agentes = agentes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

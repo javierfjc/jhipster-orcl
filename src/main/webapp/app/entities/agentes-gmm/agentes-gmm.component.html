@@ -22,6 +22,11 @@
             <th jhiSortBy="fechaEstado"><span jhiTranslate="jhipsterOrclApp.agentes.fechaEstado">Fecha Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tpNumero"><span jhiTranslate="jhipsterOrclApp.agentes.tpNumero">Tp Numero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="tpRegalos"><span jhiTranslate="jhipsterOrclApp.agentes.tpRegalos">Tp Regalos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoTerminalId"><span jhiTranslate="jhipsterOrclApp.agentes.tipoTerminal">Tipo Terminal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoAreaId"><span jhiTranslate="jhipsterOrclApp.agentes.tipoArea">Tipo Area</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoAgenteId"><span jhiTranslate="jhipsterOrclApp.agentes.tipoAgente">Tipo Agente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="empresaId"><span jhiTranslate="jhipsterOrclApp.agentes.empresa">Empresa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="almacenId"><span jhiTranslate="jhipsterOrclApp.agentes.almacen">Almacen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -35,6 +40,31 @@
                 <td>{{agentes.fechaEstado | date:'mediumDate'}}</td>
                 <td>{{agentes.tpNumero}}</td>
                 <td jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + agentes.tpRegalos}}">{{agentes.tpRegalos}}</td>
+                <td>
+                    <div *ngIf="agentes.tipoTerminalId">
+                        <a [routerLink]="['../tipo-terminal-gmm', agentes.tipoTerminalId , 'view' ]" >{{agentes.tipoTerminalId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agentes.tipoAreaId">
+                        <a [routerLink]="['../tipo-area-gmm', agentes.tipoAreaId , 'view' ]" >{{agentes.tipoAreaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agentes.tipoAgenteId">
+                        <a [routerLink]="['../tipo-agente-gmm', agentes.tipoAgenteId , 'view' ]" >{{agentes.tipoAgenteId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agentes.empresaId">
+                        <a [routerLink]="['../empresas-gmm', agentes.empresaId , 'view' ]" >{{agentes.empresaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agentes.almacenId">
+                        <a [routerLink]="['../almacenes-gmm', agentes.almacenId , 'view' ]" >{{agentes.almacenId}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

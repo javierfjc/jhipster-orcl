@@ -51,7 +51,7 @@ describe('TipoTerminal e2e test', () => {
       tipoTerminalUpdatePage.tipoImporteDto1SelectLastOption(),
       tipoTerminalUpdatePage.tipoImporteDto2SelectLastOption(),
       tipoTerminalUpdatePage.tipoImporteDto3SelectLastOption(),
-      tipoTerminalUpdatePage.agentesSelectLastOption()
+      tipoTerminalUpdatePage.tipoEnlaceSelectLastOption()
     ]);
     expect(await tipoTerminalUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await tipoTerminalUpdatePage.getTituloInput()).to.eq('titulo', 'Expected Titulo value to be equals to titulo');

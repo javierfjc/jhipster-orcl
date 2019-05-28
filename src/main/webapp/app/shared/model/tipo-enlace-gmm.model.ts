@@ -1,9 +1,11 @@
+import { ITipoTerminalGmm } from 'app/shared/model/tipo-terminal-gmm.model';
+
 export interface ITipoEnlaceGmm {
   id?: number;
   codigo?: string;
   titulo?: string;
   descripcion?: string;
-  tipoTerminalId?: number;
+  tipoTerminals?: ITipoTerminalGmm[];
 }
 
 export class TipoEnlaceGmm implements ITipoEnlaceGmm {
@@ -12,6 +14,6 @@ export class TipoEnlaceGmm implements ITipoEnlaceGmm {
     public codigo?: string,
     public titulo?: string,
     public descripcion?: string,
-    public tipoTerminalId?: number
+    public tipoTerminals?: ITipoTerminalGmm[]
   ) {}
 }

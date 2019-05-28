@@ -26,8 +26,8 @@
       "tipoImporteDto1": "Tipo Importe Dto 1",
       "tipoImporteDto2": "Tipo Importe Dto 2",
       "tipoImporteDto3": "Tipo Importe Dto 3",
-      "tipoEnlace": "Tipo Enlace",
-      "agentes": "Agentes"
+      "agente": "Agente",
+      "tipoEnlace": "Tipo Enlace"
     }
   }
 }

@@ -17,12 +17,6 @@
                 <dd>
                     <span>{{tipoAgente.descripcion}}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterOrclApp.tipoAgente.agentes">Agentes</span></dt>
-                <dd>
-                    <div *ngIf="tipoAgente.agentesId">
-                        <a [routerLink]="['/agentes-gmm', tipoAgente.agentesId, 'view']">{{tipoAgente.agentesId}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

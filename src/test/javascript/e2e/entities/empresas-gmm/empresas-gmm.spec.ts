@@ -47,8 +47,7 @@ describe('Empresas e2e test', () => {
       empresasUpdatePage.setFechaAltaInput('2000-12-31'),
       empresasUpdatePage.setEstadoInput('estado'),
       empresasUpdatePage.setFechaEstadoInput('2000-12-31'),
-      empresasUpdatePage.setExclusivaInput('exclusiva'),
-      empresasUpdatePage.agentesSelectLastOption()
+      empresasUpdatePage.setExclusivaInput('exclusiva')
     ]);
     expect(await empresasUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await empresasUpdatePage.getDescripcionInput()).to.eq('descripcion', 'Expected Descripcion value to be equals to descripcion');

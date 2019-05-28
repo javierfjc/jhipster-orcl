@@ -34,7 +34,6 @@ export class EmpresasUpdatePage {
   estadoInput = element(by.id('field_estado'));
   fechaEstadoInput = element(by.id('field_fechaEstado'));
   exclusivaInput = element(by.id('field_exclusiva'));
-  agentesSelect = element(by.id('field_agentes'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -102,25 +101,6 @@ export class EmpresasUpdatePage {
 
   async getExclusivaInput() {
     return await this.exclusivaInput.getAttribute('value');
-  }
-
-  async agentesSelectLastOption(timeout?: number) {
-    await this.agentesSelect
-      .all(by.tagName('option'))
-      .last()
-      .click();
-  }
-
-  async agentesSelectOption(option) {
-    await this.agentesSelect.sendKeys(option);
-  }
-
-  getAgentesSelect(): ElementFinder {
-    return this.agentesSelect;
-  }
-
-  async getAgentesSelectedOption() {
-    return await this.agentesSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

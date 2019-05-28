@@ -27,10 +27,6 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="tipo_terminal_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
 

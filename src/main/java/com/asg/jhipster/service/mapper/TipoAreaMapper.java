@@ -8,13 +8,11 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link TipoArea} and its DTO {@link TipoAreaDTO}.
  */
-@Mapper(componentModel = "spring", uses = {AgentesMapper.class})
+@Mapper(componentModel = "spring", uses = {})
 public interface TipoAreaMapper extends EntityMapper<TipoAreaDTO, TipoArea> {
 
-    @Mapping(source = "agentes.id", target = "agentesId")
-    TipoAreaDTO toDto(TipoArea tipoArea);
 
-    @Mapping(source = "agentesId", target = "agentes")
+    @Mapping(target = "agentes", ignore = true)
     TipoArea toEntity(TipoAreaDTO tipoAreaDTO);
 
     default TipoArea fromId(Long id) {

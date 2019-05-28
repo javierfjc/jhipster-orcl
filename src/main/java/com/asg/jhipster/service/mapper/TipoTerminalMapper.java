@@ -8,14 +8,14 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link TipoTerminal} and its DTO {@link TipoTerminalDTO}.
  */
-@Mapper(componentModel = "spring", uses = {AgentesMapper.class})
+@Mapper(componentModel = "spring", uses = {TipoEnlaceMapper.class})
 public interface TipoTerminalMapper extends EntityMapper<TipoTerminalDTO, TipoTerminal> {
 
-    @Mapping(source = "agentes.id", target = "agentesId")
+    @Mapping(source = "tipoEnlace.id", target = "tipoEnlaceId")
     TipoTerminalDTO toDto(TipoTerminal tipoTerminal);
 
-    @Mapping(target = "tipoEnlaces", ignore = true)
-    @Mapping(source = "agentesId", target = "agentes")
+    @Mapping(target = "agentes", ignore = true)
+    @Mapping(source = "tipoEnlaceId", target = "tipoEnlace")
     TipoTerminal toEntity(TipoTerminalDTO tipoTerminalDTO);
 
     default TipoTerminal fromId(Long id) {

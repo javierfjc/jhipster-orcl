@@ -16,10 +16,10 @@
     ],
     "relationships": [
         {
-            "relationshipName": "tipoTerminal",
+            "relationshipType": "one-to-many",
             "otherEntityName": "tipoTerminal",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "tipoEnlace",
+            "relationshipName": "tipoTerminal"
         }
     ],
     "changelogDate": "20190528071140",

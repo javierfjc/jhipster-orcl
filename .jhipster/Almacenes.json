@@ -24,10 +24,10 @@
     ],
     "relationships": [
         {
-            "relationshipName": "agentes",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agentes",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "almacen",
+            "relationshipName": "agente"
         }
     ],
     "changelogDate": "20190528071142",

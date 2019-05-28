@@ -3,13 +3,9 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { JhiAlertService } from 'ng-jhipster';
 import { IAlmacenesGmm, AlmacenesGmm } from 'app/shared/model/almacenes-gmm.model';
 import { AlmacenesGmmService } from './almacenes-gmm.service';
-import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
-import { AgentesGmmService } from 'app/entities/agentes-gmm';
 
 @Component({
   selector: 'jhi-almacenes-gmm-update',
@@ -18,8 +14,6 @@ import { AgentesGmmService } from 'app/entities/agentes-gmm';
 export class AlmacenesGmmUpdateComponent implements OnInit {
   almacenes: IAlmacenesGmm;
   isSaving: boolean;
-
-  agentes: IAgentesGmm[];
   fechaAltaDp: any;
   fechaEstadoDp: any;
 
@@ -29,17 +23,10 @@ export class AlmacenesGmmUpdateComponent implements OnInit {
     titulo: [],
     fechaAlta: [],
     estado: [],
-    fechaEstado: [],
-    agentesId: []
+    fechaEstado: []
   });
 
-  constructor(
-    protected jhiAlertService: JhiAlertService,
-    protected almacenesService: AlmacenesGmmService,
-    protected agentesService: AgentesGmmService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected almacenesService: AlmacenesGmmService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.isSaving = false;
@@ -47,13 +34,6 @@ export class AlmacenesGmmUpdateComponent implements OnInit {
       this.updateForm(almacenes);
       this.almacenes = almacenes;
     });
-    this.agentesService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IAgentesGmm[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgentesGmm[]>) => response.body)
-      )
-      .subscribe((res: IAgentesGmm[]) => (this.agentes = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(almacenes: IAlmacenesGmm) {
@@ -63,8 +43,7 @@ export class AlmacenesGmmUpdateComponent implements OnInit {
       titulo: almacenes.titulo,
       fechaAlta: almacenes.fechaAlta,
       estado: almacenes.estado,
-      fechaEstado: almacenes.fechaEstado,
-      agentesId: almacenes.agentesId
+      fechaEstado: almacenes.fechaEstado
     });
   }
 
@@ -90,8 +69,7 @@ export class AlmacenesGmmUpdateComponent implements OnInit {
       titulo: this.editForm.get(['titulo']).value,
       fechaAlta: this.editForm.get(['fechaAlta']).value,
       estado: this.editForm.get(['estado']).value,
-      fechaEstado: this.editForm.get(['fechaEstado']).value,
-      agentesId: this.editForm.get(['agentesId']).value
+      fechaEstado: this.editForm.get(['fechaEstado']).value
     };
     return entity;
   }
@@ -107,12 +85,5 @@ export class AlmacenesGmmUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
-  }
-  protected onError(errorMessage: string) {
-    this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackAgentesById(index: number, item: IAgentesGmm) {
-    return item.id;
   }
 }

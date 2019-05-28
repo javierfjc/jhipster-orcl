@@ -37,7 +37,7 @@ export class TipoTerminalUpdatePage {
   tipoImporteDto1Select = element(by.id('field_tipoImporteDto1'));
   tipoImporteDto2Select = element(by.id('field_tipoImporteDto2'));
   tipoImporteDto3Select = element(by.id('field_tipoImporteDto3'));
-  agentesSelect = element(by.id('field_agentes'));
+  tipoEnlaceSelect = element(by.id('field_tipoEnlace'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -166,23 +166,23 @@ export class TipoTerminalUpdatePage {
       .click();
   }
 
-  async agentesSelectLastOption(timeout?: number) {
-    await this.agentesSelect
+  async tipoEnlaceSelectLastOption(timeout?: number) {
+    await this.tipoEnlaceSelect
       .all(by.tagName('option'))
       .last()
       .click();
   }
 
-  async agentesSelectOption(option) {
-    await this.agentesSelect.sendKeys(option);
+  async tipoEnlaceSelectOption(option) {
+    await this.tipoEnlaceSelect.sendKeys(option);
   }
 
-  getAgentesSelect(): ElementFinder {
-    return this.agentesSelect;
+  getTipoEnlaceSelect(): ElementFinder {
+    return this.tipoEnlaceSelect;
   }
 
-  async getAgentesSelectedOption() {
-    return await this.agentesSelect.element(by.css('option:checked')).getText();
+  async getTipoEnlaceSelectedOption() {
+    return await this.tipoEnlaceSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

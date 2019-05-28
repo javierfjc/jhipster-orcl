@@ -25,13 +25,6 @@
                            formControlName="descripcion"/>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoEnlace.tipoTerminal" for="field_tipoTerminal">Tipo Terminal</label>
-                    <select class="form-control" id="field_tipoTerminal" name="tipoTerminal" formControlName="tipoTerminalId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="tipoTerminalOption.id" *ngFor="let tipoTerminalOption of tipoterminals; trackBy: trackTipoTerminalById">{{tipoTerminalOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

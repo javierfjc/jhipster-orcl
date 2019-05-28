@@ -18,7 +18,7 @@
       "codigo": "Codigo",
       "titulo": "Titulo",
       "descripcion": "Descripcion",
-      "agentes": "Agentes"
+      "agente": "Agente"
     }
   }
 }

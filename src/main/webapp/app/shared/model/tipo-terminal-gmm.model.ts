@@ -1,4 +1,4 @@
-import { ITipoEnlaceGmm } from 'app/shared/model/tipo-enlace-gmm.model';
+import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
 
 export const enum DominioSiNo {
   SI = 'SI',
@@ -23,8 +23,8 @@ export interface ITipoTerminalGmm {
   tipoImporteDto1?: TipoTerminalTipoImporte;
   tipoImporteDto2?: TipoTerminalTipoImporte;
   tipoImporteDto3?: TipoTerminalTipoImporte;
-  tipoEnlaces?: ITipoEnlaceGmm[];
-  agentesId?: number;
+  agentes?: IAgentesGmm[];
+  tipoEnlaceId?: number;
 }
 
 export class TipoTerminalGmm implements ITipoTerminalGmm {
@@ -41,7 +41,7 @@ export class TipoTerminalGmm implements ITipoTerminalGmm {
     public tipoImporteDto1?: TipoTerminalTipoImporte,
     public tipoImporteDto2?: TipoTerminalTipoImporte,
     public tipoImporteDto3?: TipoTerminalTipoImporte,
-    public tipoEnlaces?: ITipoEnlaceGmm[],
-    public agentesId?: number
+    public agentes?: IAgentesGmm[],
+    public tipoEnlaceId?: number
   ) {}
 }

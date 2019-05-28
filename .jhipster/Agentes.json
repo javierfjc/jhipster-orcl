@@ -33,34 +33,39 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "otherEntityName": "tipoTerminal",
-            "otherEntityRelationshipName": "agentes",
-            "relationshipName": "tipoTerminal"
+            "otherEntityRelationshipName": "agente",
+            "relationshipName": "tipoTerminal",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "otherEntityName": "tipoArea",
-            "otherEntityRelationshipName": "agentes",
-            "relationshipName": "tipoArea"
+            "otherEntityRelationshipName": "agente",
+            "relationshipName": "tipoArea",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "otherEntityName": "tipoAgente",
-            "otherEntityRelationshipName": "agentes",
-            "relationshipName": "tipoAgente"
+            "otherEntityRelationshipName": "agente",
+            "relationshipName": "tipoAgente",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "otherEntityName": "empresas",
-            "otherEntityRelationshipName": "agentes",
-            "relationshipName": "empresa"
+            "otherEntityRelationshipName": "agente",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "otherEntityName": "almacenes",
-            "otherEntityRelationshipName": "agentes",
-            "relationshipName": "almacen"
+            "otherEntityRelationshipName": "agente",
+            "relationshipName": "almacen",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20190528071144",

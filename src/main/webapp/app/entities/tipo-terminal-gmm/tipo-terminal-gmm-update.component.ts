@@ -7,8 +7,8 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { ITipoTerminalGmm, TipoTerminalGmm } from 'app/shared/model/tipo-terminal-gmm.model';
 import { TipoTerminalGmmService } from './tipo-terminal-gmm.service';
-import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
-import { AgentesGmmService } from 'app/entities/agentes-gmm';
+import { ITipoEnlaceGmm } from 'app/shared/model/tipo-enlace-gmm.model';
+import { TipoEnlaceGmmService } from 'app/entities/tipo-enlace-gmm';
 
 @Component({
   selector: 'jhi-tipo-terminal-gmm-update',
@@ -18,7 +18,7 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
   tipoTerminal: ITipoTerminalGmm;
   isSaving: boolean;
 
-  agentes: IAgentesGmm[];
+  tipoenlaces: ITipoEnlaceGmm[];
 
   editForm = this.fb.group({
     id: [],
@@ -33,13 +33,13 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
     tipoImporteDto1: [],
     tipoImporteDto2: [],
     tipoImporteDto3: [],
-    agentesId: []
+    tipoEnlaceId: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected tipoTerminalService: TipoTerminalGmmService,
-    protected agentesService: AgentesGmmService,
+    protected tipoEnlaceService: TipoEnlaceGmmService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -50,13 +50,13 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
       this.updateForm(tipoTerminal);
       this.tipoTerminal = tipoTerminal;
     });
-    this.agentesService
+    this.tipoEnlaceService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAgentesGmm[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgentesGmm[]>) => response.body)
+        filter((mayBeOk: HttpResponse<ITipoEnlaceGmm[]>) => mayBeOk.ok),
+        map((response: HttpResponse<ITipoEnlaceGmm[]>) => response.body)
       )
-      .subscribe((res: IAgentesGmm[]) => (this.agentes = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: ITipoEnlaceGmm[]) => (this.tipoenlaces = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(tipoTerminal: ITipoTerminalGmm) {
@@ -73,7 +73,7 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
       tipoImporteDto1: tipoTerminal.tipoImporteDto1,
       tipoImporteDto2: tipoTerminal.tipoImporteDto2,
       tipoImporteDto3: tipoTerminal.tipoImporteDto3,
-      agentesId: tipoTerminal.agentesId
+      tipoEnlaceId: tipoTerminal.tipoEnlaceId
     });
   }
 
@@ -106,7 +106,7 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
       tipoImporteDto1: this.editForm.get(['tipoImporteDto1']).value,
       tipoImporteDto2: this.editForm.get(['tipoImporteDto2']).value,
       tipoImporteDto3: this.editForm.get(['tipoImporteDto3']).value,
-      agentesId: this.editForm.get(['agentesId']).value
+      tipoEnlaceId: this.editForm.get(['tipoEnlaceId']).value
     };
     return entity;
   }
@@ -127,7 +127,7 @@ export class TipoTerminalGmmUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAgentesById(index: number, item: IAgentesGmm) {
+  trackTipoEnlaceById(index: number, item: ITipoEnlaceGmm) {
     return item.id;
   }
 }

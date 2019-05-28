@@ -42,8 +42,7 @@ describe('TipoAgente e2e test', () => {
     await promise.all([
       tipoAgenteUpdatePage.setCodigoInput('codigo'),
       tipoAgenteUpdatePage.setTituloInput('titulo'),
-      tipoAgenteUpdatePage.setDescripcionInput('descripcion'),
-      tipoAgenteUpdatePage.agentesSelectLastOption()
+      tipoAgenteUpdatePage.setDescripcionInput('descripcion')
     ]);
     expect(await tipoAgenteUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await tipoAgenteUpdatePage.getTituloInput()).to.eq('titulo', 'Expected Titulo value to be equals to titulo');

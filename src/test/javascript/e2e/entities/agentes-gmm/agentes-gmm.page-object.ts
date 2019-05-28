@@ -33,6 +33,11 @@ export class AgentesUpdatePage {
   fechaEstadoInput = element(by.id('field_fechaEstado'));
   tpNumeroInput = element(by.id('field_tpNumero'));
   tpRegalosSelect = element(by.id('field_tpRegalos'));
+  tipoTerminalSelect = element(by.id('field_tipoTerminal'));
+  tipoAreaSelect = element(by.id('field_tipoArea'));
+  tipoAgenteSelect = element(by.id('field_tipoAgente'));
+  empresaSelect = element(by.id('field_empresa'));
+  almacenSelect = element(by.id('field_almacen'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -99,6 +104,101 @@ export class AgentesUpdatePage {
       .all(by.tagName('option'))
       .last()
       .click();
+  }
+
+  async tipoTerminalSelectLastOption(timeout?: number) {
+    await this.tipoTerminalSelect
+      .all(by.tagName('option'))
+      .last()
+      .click();
+  }
+
+  async tipoTerminalSelectOption(option) {
+    await this.tipoTerminalSelect.sendKeys(option);
+  }
+
+  getTipoTerminalSelect(): ElementFinder {
+    return this.tipoTerminalSelect;
+  }
+
+  async getTipoTerminalSelectedOption() {
+    return await this.tipoTerminalSelect.element(by.css('option:checked')).getText();
+  }
+
+  async tipoAreaSelectLastOption(timeout?: number) {
+    await this.tipoAreaSelect
+      .all(by.tagName('option'))
+      .last()
+      .click();
+  }
+
+  async tipoAreaSelectOption(option) {
+    await this.tipoAreaSelect.sendKeys(option);
+  }
+
+  getTipoAreaSelect(): ElementFinder {
+    return this.tipoAreaSelect;
+  }
+
+  async getTipoAreaSelectedOption() {
+    return await this.tipoAreaSelect.element(by.css('option:checked')).getText();
+  }
+
+  async tipoAgenteSelectLastOption(timeout?: number) {
+    await this.tipoAgenteSelect
+      .all(by.tagName('option'))
+      .last()
+      .click();
+  }
+
+  async tipoAgenteSelectOption(option) {
+    await this.tipoAgenteSelect.sendKeys(option);
+  }
+
+  getTipoAgenteSelect(): ElementFinder {
+    return this.tipoAgenteSelect;
+  }
+
+  async getTipoAgenteSelectedOption() {
+    return await this.tipoAgenteSelect.element(by.css('option:checked')).getText();
+  }
+
+  async empresaSelectLastOption(timeout?: number) {
+    await this.empresaSelect
+      .all(by.tagName('option'))
+      .last()
+      .click();
+  }
+
+  async empresaSelectOption(option) {
+    await this.empresaSelect.sendKeys(option);
+  }
+
+  getEmpresaSelect(): ElementFinder {
+    return this.empresaSelect;
+  }
+
+  async getEmpresaSelectedOption() {
+    return await this.empresaSelect.element(by.css('option:checked')).getText();
+  }
+
+  async almacenSelectLastOption(timeout?: number) {
+    await this.almacenSelect
+      .all(by.tagName('option'))
+      .last()
+      .click();
+  }
+
+  async almacenSelectOption(option) {
+    await this.almacenSelect.sendKeys(option);
+  }
+
+  getAlmacenSelect(): ElementFinder {
+    return this.almacenSelect;
+  }
+
+  async getAlmacenSelectedOption() {
+    return await this.almacenSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

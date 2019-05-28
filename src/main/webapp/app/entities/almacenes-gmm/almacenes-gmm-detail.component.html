@@ -25,12 +25,6 @@
                 <dd>
                     <span>{{almacenes.fechaEstado}}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterOrclApp.almacenes.agentes">Agentes</span></dt>
-                <dd>
-                    <div *ngIf="almacenes.agentesId">
-                        <a [routerLink]="['/agentes-gmm', almacenes.agentesId, 'view']">{{almacenes.agentesId}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

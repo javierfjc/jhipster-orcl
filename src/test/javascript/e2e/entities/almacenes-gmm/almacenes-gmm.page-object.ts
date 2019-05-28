@@ -31,7 +31,6 @@ export class AlmacenesUpdatePage {
   fechaAltaInput = element(by.id('field_fechaAlta'));
   estadoInput = element(by.id('field_estado'));
   fechaEstadoInput = element(by.id('field_fechaEstado'));
-  agentesSelect = element(by.id('field_agentes'));
 
   async getPageTitle() {
     return this.pageTitle.getAttribute('jhiTranslate');
@@ -75,25 +74,6 @@ export class AlmacenesUpdatePage {
 
   async getFechaEstadoInput() {
     return await this.fechaEstadoInput.getAttribute('value');
-  }
-
-  async agentesSelectLastOption(timeout?: number) {
-    await this.agentesSelect
-      .all(by.tagName('option'))
-      .last()
-      .click();
-  }
-
-  async agentesSelectOption(option) {
-    await this.agentesSelect.sendKeys(option);
-  }
-
-  getAgentesSelect(): ElementFinder {
-    return this.agentesSelect;
-  }
-
-  async getAgentesSelectedOption() {
-    return await this.agentesSelect.element(by.css('option:checked')).getText();
   }
 
   async save(timeout?: number) {

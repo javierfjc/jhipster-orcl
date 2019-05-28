@@ -26,7 +26,7 @@
             <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto1">Tipo Importe Dto 1</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto2">Tipo Importe Dto 2</span></th>
             <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto3">Tipo Importe Dto 3</span></th>
-            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes">Agentes</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoEnlace">Tipo Enlace</span></th>
             <th></th>
             </tr>
             </thead>
@@ -45,8 +45,8 @@
                 <td jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto2}}">{{tipoTerminal.tipoImporteDto2}}</td>
                 <td jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto3}}">{{tipoTerminal.tipoImporteDto3}}</td>
                 <td>
-                    <div *ngIf="tipoTerminal.agentesId">
-                        <a [routerLink]="['../agentes-gmm', tipoTerminal.agentesId , 'view' ]" >{{tipoTerminal.agentesId}}</a>
+                    <div *ngIf="tipoTerminal.tipoEnlaceId">
+                        <a [routerLink]="['../tipo-enlace-gmm', tipoTerminal.tipoEnlaceId , 'view' ]" >{{tipoTerminal.tipoEnlaceId}}</a>
                     </div>
                 </td>
                 <td class="text-right">

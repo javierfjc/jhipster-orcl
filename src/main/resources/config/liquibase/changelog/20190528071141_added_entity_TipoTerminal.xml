@@ -59,7 +59,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="agentes_id" type="bigint">
+            <column name="tipo_enlace_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

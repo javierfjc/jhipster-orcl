@@ -42,8 +42,7 @@ describe('TipoArea e2e test', () => {
     await promise.all([
       tipoAreaUpdatePage.setCodigoInput('codigo'),
       tipoAreaUpdatePage.setTituloInput('titulo'),
-      tipoAreaUpdatePage.setDescripcionInput('descripcion'),
-      tipoAreaUpdatePage.agentesSelectLastOption()
+      tipoAreaUpdatePage.setDescripcionInput('descripcion')
     ]);
     expect(await tipoAreaUpdatePage.getCodigoInput()).to.eq('codigo', 'Expected Codigo value to be equals to codigo');
     expect(await tipoAreaUpdatePage.getTituloInput()).to.eq('titulo', 'Expected Titulo value to be equals to titulo');

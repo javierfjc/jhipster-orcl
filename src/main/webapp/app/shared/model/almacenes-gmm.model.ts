@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { IAgentesGmm } from 'app/shared/model/agentes-gmm.model';
 
 export interface IAlmacenesGmm {
   id?: number;
@@ -7,7 +8,7 @@ export interface IAlmacenesGmm {
   fechaAlta?: Moment;
   estado?: string;
   fechaEstado?: Moment;
-  agentesId?: number;
+  agentes?: IAgentesGmm[];
 }
 
 export class AlmacenesGmm implements IAlmacenesGmm {
@@ -18,6 +19,6 @@ export class AlmacenesGmm implements IAlmacenesGmm {
     public fechaAlta?: Moment,
     public estado?: string,
     public fechaEstado?: Moment,
-    public agentesId?: number
+    public agentes?: IAgentesGmm[]
   ) {}
 }

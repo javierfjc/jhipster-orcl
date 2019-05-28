@@ -37,7 +37,7 @@ public class TipoTerminalDTO implements Serializable {
     private TipoTerminalTipoImporte tipoImporteDto3;
 
 
-    private Long agentesId;
+    private Long tipoEnlaceId;
 
     public Long getId() {
         return id;
@@ -135,12 +135,12 @@ public class TipoTerminalDTO implements Serializable {
         this.tipoImporteDto3 = tipoImporteDto3;
     }
 
-    public Long getAgentesId() {
-        return agentesId;
+    public Long getTipoEnlaceId() {
+        return tipoEnlaceId;
     }
 
-    public void setAgentesId(Long agentesId) {
-        this.agentesId = agentesId;
+    public void setTipoEnlaceId(Long tipoEnlaceId) {
+        this.tipoEnlaceId = tipoEnlaceId;
     }
 
     @Override
@@ -179,7 +179,7 @@ public class TipoTerminalDTO implements Serializable {
             ", tipoImporteDto1='" + getTipoImporteDto1() + "'" +
             ", tipoImporteDto2='" + getTipoImporteDto2() + "'" +
             ", tipoImporteDto3='" + getTipoImporteDto3() + "'" +
-            ", agentes=" + getAgentesId() +
+            ", tipoEnlace=" + getTipoEnlaceId() +
             "}";
     }
 }
