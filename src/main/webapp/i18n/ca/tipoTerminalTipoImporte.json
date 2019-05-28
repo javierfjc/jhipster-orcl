@@ -1,0 +1,9 @@
+{
+  "jhipsterOrclApp": {
+    "TipoTerminalTipoImporte": {
+      "null": "",
+      "PORCENTAJE": "PORCENTAJE",
+      "IMPORTE": "IMPORTE"
+    }
+  }
+}

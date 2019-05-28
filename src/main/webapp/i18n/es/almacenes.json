@@ -1,0 +1,26 @@
+{
+  "jhipsterOrclApp": {
+    "almacenes": {
+      "home": {
+        "title": "Almacenes",
+        "createLabel": "Crear nuevo Almacenes",
+        "createOrEditLabel": "Crear o editar Almacenes"
+      },
+      "created": "Un nuevo Almacenes ha sido creado con el identificador {{ param }}",
+      "updated": "Un Almacenes ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Almacenes ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Almacenes {{ id }}?"
+      },
+      "detail": {
+        "title": "Almacenes"
+      },
+      "codigo": "Codigo",
+      "titulo": "Titulo",
+      "fechaAlta": "Fecha Alta",
+      "estado": "Estado",
+      "fechaEstado": "Fecha Estado",
+      "agentes": "Agentes"
+    }
+  }
+}

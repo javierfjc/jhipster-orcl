@@ -1,0 +1,76 @@
+{
+    "name": "Agentes",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaAlta",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaEstado",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tpNumero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tpRegalos",
+            "fieldType": "DominioSiNo",
+            "fieldValues": "SI,NO"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tipoTerminal",
+            "otherEntityRelationshipName": "agentes",
+            "relationshipName": "tipoTerminal"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tipoArea",
+            "otherEntityRelationshipName": "agentes",
+            "relationshipName": "tipoArea"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tipoAgente",
+            "otherEntityRelationshipName": "agentes",
+            "relationshipName": "tipoAgente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "empresas",
+            "otherEntityRelationshipName": "agentes",
+            "relationshipName": "empresa"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "almacenes",
+            "otherEntityRelationshipName": "agentes",
+            "relationshipName": "almacen"
+        }
+    ],
+    "changelogDate": "20190528071144",
+    "entityTableName": "agentes",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "gmm"
+}

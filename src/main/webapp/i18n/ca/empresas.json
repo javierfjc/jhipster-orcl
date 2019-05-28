@@ -1,0 +1,29 @@
+{
+  "jhipsterOrclApp": {
+    "empresas": {
+      "home": {
+        "title": "Empresas",
+        "createLabel": "Create a new Empresas",
+        "createOrEditLabel": "Create or edit a Empresas"
+      },
+      "created": "A new Empresas is created with identifier {{ param }}",
+      "updated": "A Empresas is updated with identifier {{ param }}",
+      "deleted": "A Empresas is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Empresas {{ id }}?"
+      },
+      "detail": {
+        "title": "Empresas"
+      },
+      "codigo": "Codigo",
+      "descripcion": "Descripcion",
+      "titulo": "Titulo",
+      "cif": "Cif",
+      "fechaAlta": "Fecha Alta",
+      "estado": "Estado",
+      "fechaEstado": "Fecha Estado",
+      "exclusiva": "Exclusiva",
+      "agentes": "Agentes"
+    }
+  }
+}

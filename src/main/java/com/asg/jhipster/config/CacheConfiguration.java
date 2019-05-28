@@ -43,6 +43,19 @@ public class CacheConfiguration {
             createCache(cm, com.asg.jhipster.domain.User.class.getName());
             createCache(cm, com.asg.jhipster.domain.Authority.class.getName());
             createCache(cm, com.asg.jhipster.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.asg.jhipster.domain.TipoAgente.class.getName());
+            createCache(cm, com.asg.jhipster.domain.TipoArea.class.getName());
+            createCache(cm, com.asg.jhipster.domain.TipoEnlace.class.getName());
+            createCache(cm, com.asg.jhipster.domain.TipoTerminal.class.getName());
+            createCache(cm, com.asg.jhipster.domain.TipoTerminal.class.getName() + ".tipoEnlaces");
+            createCache(cm, com.asg.jhipster.domain.Almacenes.class.getName());
+            createCache(cm, com.asg.jhipster.domain.Empresas.class.getName());
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName());
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".tipoTerminals");
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".tipoAreas");
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".tipoAgentes");
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".empresas");
+            createCache(cm, com.asg.jhipster.domain.Agentes.class.getName() + ".almacens");
             // jhipster-needle-ehcache-add-entry
         };
     }

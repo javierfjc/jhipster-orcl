@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agentes">
+            <h2><span jhiTranslate="jhipsterOrclApp.agentes.detail.title">Agentes</span> {{agentes.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{agentes.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{agentes.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.fechaAlta">Fecha Alta</span></dt>
+                <dd>
+                    <span>{{agentes.fechaAlta}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.estado">Estado</span></dt>
+                <dd>
+                    <span>{{agentes.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.fechaEstado">Fecha Estado</span></dt>
+                <dd>
+                    <span>{{agentes.fechaEstado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.tpNumero">Tp Numero</span></dt>
+                <dd>
+                    <span>{{agentes.tpNumero}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.agentes.tpRegalos">Tp Regalos</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + agentes.tpRegalos}}">{{agentes.tpRegalos}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agentes-gmm', agentes.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
