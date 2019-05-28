@@ -68,12 +68,12 @@ entity Agentes {
 }
 
 relationship OneToMany {
-	TipoTerminal{tipoEnlace} to TipoEnlace,
-    Agentes{tipoTerminal} to TipoTerminal,
-    Agentes{tipoArea} to TipoArea,
-    Agentes{tipoAgente} to TipoAgente,
-    Agentes{empresa} to Empresas,
-    Agentes{almacen} to Almacenes,
+	TipoEnlace{tipoTerminal} to TipoTerminal{tipoEnlace},
+    TipoTerminal{agente} to Agentes{tipoTerminal},
+    TipoArea{agente} to Agentes{tipoArea},
+    TipoAgente{agente} to Agentes{tipoAgente},
+    Empresas{agente} to Agentes{empresa},
+    Almacenes{agente} to Agentes{almacen},
 }
 
 // Use Data Transfert Objects (DTO)
