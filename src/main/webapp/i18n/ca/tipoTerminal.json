@@ -1,0 +1,33 @@
+{
+  "jhipsterOrclApp": {
+    "tipoTerminal": {
+      "home": {
+        "title": "Tipo Terminals",
+        "createLabel": "Create a new Tipo Terminal",
+        "createOrEditLabel": "Create or edit a Tipo Terminal"
+      },
+      "created": "A new Tipo Terminal is created with identifier {{ param }}",
+      "updated": "A Tipo Terminal is updated with identifier {{ param }}",
+      "deleted": "A Tipo Terminal is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Terminal {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Terminal"
+      },
+      "codigo": "Codigo",
+      "titulo": "Titulo",
+      "descripcion": "Descripcion",
+      "pathEnvio": "Path Envio",
+      "pathRecibir": "Path Recibir",
+      "contador": "Contador",
+      "controlVisitas": "Control Visitas",
+      "controlCobros": "Control Cobros",
+      "tipoImporteDto1": "Tipo Importe Dto 1",
+      "tipoImporteDto2": "Tipo Importe Dto 2",
+      "tipoImporteDto3": "Tipo Importe Dto 3",
+      "tipoEnlace": "Tipo Enlace",
+      "agentes": "Agentes"
+    }
+  }
+}

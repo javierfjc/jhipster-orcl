@@ -1,0 +1,32 @@
+{
+  "jhipsterOrclApp": {
+    "agentes": {
+      "home": {
+        "title": "Agentes",
+        "createLabel": "Crear nuevo Agentes",
+        "createOrEditLabel": "Crear o editar Agentes"
+      },
+      "created": "Un nuevo Agentes ha sido creado con el identificador {{ param }}",
+      "updated": "Un Agentes ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Agentes ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Agentes {{ id }}?"
+      },
+      "detail": {
+        "title": "Agentes"
+      },
+      "codigo": "Codigo",
+      "descripcion": "Descripcion",
+      "fechaAlta": "Fecha Alta",
+      "estado": "Estado",
+      "fechaEstado": "Fecha Estado",
+      "tpNumero": "Tp Numero",
+      "tpRegalos": "Tp Regalos",
+      "tipoTerminal": "Tipo Terminal",
+      "tipoArea": "Tipo Area",
+      "tipoAgente": "Tipo Agente",
+      "empresa": "Empresa",
+      "almacen": "Almacen"
+    }
+  }
+}

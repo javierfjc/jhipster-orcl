@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empresas">
+            <h2><span jhiTranslate="jhipsterOrclApp.empresas.detail.title">Empresas</span> {{empresas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{empresas.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{empresas.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.titulo">Titulo</span></dt>
+                <dd>
+                    <span>{{empresas.titulo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.cif">Cif</span></dt>
+                <dd>
+                    <span>{{empresas.cif}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.fechaAlta">Fecha Alta</span></dt>
+                <dd>
+                    <span>{{empresas.fechaAlta}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.estado">Estado</span></dt>
+                <dd>
+                    <span>{{empresas.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.fechaEstado">Fecha Estado</span></dt>
+                <dd>
+                    <span>{{empresas.fechaEstado}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.exclusiva">Exclusiva</span></dt>
+                <dd>
+                    <span>{{empresas.exclusiva}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.empresas.agentes">Agentes</span></dt>
+                <dd>
+                    <div *ngIf="empresas.agentesId">
+                        <a [routerLink]="['/agentes-gmm', empresas.agentesId, 'view']">{{empresas.agentesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empresas-gmm', empresas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

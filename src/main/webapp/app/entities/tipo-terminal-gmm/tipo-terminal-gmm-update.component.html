@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tipo-terminal-gmm-heading" jhiTranslate="jhipsterOrclApp.tipoTerminal.home.createOrEditLabel">Create or edit a Tipo Terminal</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!tipoTerminal.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                           formControlName="codigo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.titulo" for="field_titulo">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" id="field_titulo"
+                           formControlName="titulo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.pathEnvio" for="field_pathEnvio">Path Envio</label>
+                    <input type="text" class="form-control" name="pathEnvio" id="field_pathEnvio"
+                           formControlName="pathEnvio"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.pathRecibir" for="field_pathRecibir">Path Recibir</label>
+                    <input type="text" class="form-control" name="pathRecibir" id="field_pathRecibir"
+                           formControlName="pathRecibir"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.contador" for="field_contador">Contador</label>
+                    <input type="number" class="form-control" name="contador" id="field_contador"
+                           formControlName="contador"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.controlVisitas" for="field_controlVisitas">Control Visitas</label>
+                    <select class="form-control" name="controlVisitas" formControlName="controlVisitas" id="field_controlVisitas">
+                        <option value="SI">{{'jhipsterOrclApp.DominioSiNo.SI' | translate}}</option>
+                        <option value="NO">{{'jhipsterOrclApp.DominioSiNo.NO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.controlCobros" for="field_controlCobros">Control Cobros</label>
+                    <select class="form-control" name="controlCobros" formControlName="controlCobros" id="field_controlCobros">
+                        <option value="SI">{{'jhipsterOrclApp.DominioSiNo.SI' | translate}}</option>
+                        <option value="NO">{{'jhipsterOrclApp.DominioSiNo.NO' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto1" for="field_tipoImporteDto1">Tipo Importe Dto 1</label>
+                    <select class="form-control" name="tipoImporteDto1" formControlName="tipoImporteDto1" id="field_tipoImporteDto1">
+                        <option value="PORCENTAJE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.PORCENTAJE' | translate}}</option>
+                        <option value="IMPORTE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.IMPORTE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto2" for="field_tipoImporteDto2">Tipo Importe Dto 2</label>
+                    <select class="form-control" name="tipoImporteDto2" formControlName="tipoImporteDto2" id="field_tipoImporteDto2">
+                        <option value="PORCENTAJE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.PORCENTAJE' | translate}}</option>
+                        <option value="IMPORTE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.IMPORTE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto3" for="field_tipoImporteDto3">Tipo Importe Dto 3</label>
+                    <select class="form-control" name="tipoImporteDto3" formControlName="tipoImporteDto3" id="field_tipoImporteDto3">
+                        <option value="PORCENTAJE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.PORCENTAJE' | translate}}</option>
+                        <option value="IMPORTE">{{'jhipsterOrclApp.TipoTerminalTipoImporte.IMPORTE' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes" for="field_agentes">Agentes</label>
+                    <select class="form-control" id="field_agentes" name="agentes" formControlName="agentesId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agentesOption.id" *ngFor="let agentesOption of agentes; trackBy: trackAgentesById">{{agentesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

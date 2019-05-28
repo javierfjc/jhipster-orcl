@@ -1,0 +1,24 @@
+{
+  "jhipsterOrclApp": {
+    "tipoEnlace": {
+      "home": {
+        "title": "Tipo Enlaces",
+        "createLabel": "Crear nuevo Tipo Enlace",
+        "createOrEditLabel": "Crear o editar Tipo Enlace"
+      },
+      "created": "Un nuevo Tipo Enlace ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Enlace ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Enlace ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Enlace {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Enlace"
+      },
+      "codigo": "Codigo",
+      "titulo": "Titulo",
+      "descripcion": "Descripcion",
+      "tipoTerminal": "Tipo Terminal"
+    }
+  }
+}

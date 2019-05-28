@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterOrclApp.tipoAgente.home.title">Tipo Agentes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tipo-agente-gmm" [routerLink]="['/tipo-agente-gmm/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipsterOrclApp.tipoAgente.home.createLabel">
+            Create new Tipo Agente
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tipoAgentes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoAgente.codigo">Codigo</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoAgente.titulo">Titulo</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoAgente.descripcion">Descripcion</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoAgente.agentes">Agentes</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tipoAgente of tipoAgentes ;trackBy: trackId">
+                <td><a [routerLink]="['/tipo-agente-gmm', tipoAgente.id, 'view' ]">{{tipoAgente.id}}</a></td>
+                <td>{{tipoAgente.codigo}}</td>
+                <td>{{tipoAgente.titulo}}</td>
+                <td>{{tipoAgente.descripcion}}</td>
+                <td>
+                    <div *ngIf="tipoAgente.agentesId">
+                        <a [routerLink]="['../agentes-gmm', tipoAgente.agentesId , 'view' ]" >{{tipoAgente.agentesId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/tipo-agente-gmm', tipoAgente.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tipo-agente-gmm', tipoAgente.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'tipo-agente-gmm', { outlets: { popup: tipoAgente.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

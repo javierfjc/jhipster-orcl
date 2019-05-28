@@ -1,0 +1,89 @@
+enum DominioSiNo {
+    SI, NO
+  }
+  
+enum TipoTerminalTipoImporte {
+    PORCENTAJE, IMPORTE
+  }
+  
+entity TipoAgente {
+	codigo String,
+    titulo String,
+	descripcion String
+}
+
+entity TipoArea {
+	codigo String,
+    titulo String,
+	descripcion String
+}
+
+entity TipoEnlace {
+	codigo String,
+    titulo String,
+	descripcion String
+}
+
+entity TipoTerminal {
+	codigo String,
+    titulo String,
+	descripcion String,
+    pathEnvio String,
+    pathRecibir String,
+    contador Integer,
+    controlVisitas DominioSiNo,
+    controlCobros DominioSiNo,
+    tipoImporteDto1 TipoTerminalTipoImporte,
+    tipoImporteDto2 TipoTerminalTipoImporte,
+    tipoImporteDto3 TipoTerminalTipoImporte,
+}
+
+entity Almacenes {
+	codigo String,
+	titulo String,
+    fechaAlta LocalDate,
+    estado String,
+    fechaEstado LocalDate,
+}
+
+entity Empresas {
+	codigo String,
+    descripcion String,
+	titulo String,
+    cif String,
+    fechaAlta LocalDate,
+    estado String,
+    fechaEstado LocalDate,
+    exclusiva String
+}
+
+entity Agentes {
+	codigo String,
+    descripcion String
+    fechaAlta LocalDate,
+    estado String,
+    fechaEstado LocalDate,
+    tpNumero String,
+    tpRegalos DominioSiNo
+}
+
+relationship OneToMany {
+	TipoTerminal{tipoEnlace} to TipoEnlace,
+    Agentes{tipoTerminal} to TipoTerminal,
+    Agentes{tipoArea} to TipoArea,
+    Agentes{tipoAgente} to TipoAgente,
+    Agentes{empresa} to Empresas,
+    Agentes{almacen} to Almacenes,
+}
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+paginate Agentes with pagination
+paginate Empresas with pagination
+
+// Set an angular suffix
+angularSuffix * with gmm

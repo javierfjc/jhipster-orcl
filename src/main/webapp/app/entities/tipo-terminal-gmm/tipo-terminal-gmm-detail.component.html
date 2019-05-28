@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoTerminal">
+            <h2><span jhiTranslate="jhipsterOrclApp.tipoTerminal.detail.title">Tipo Terminal</span> {{tipoTerminal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.titulo">Titulo</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.titulo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.pathEnvio">Path Envio</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.pathEnvio}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.pathRecibir">Path Recibir</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.pathRecibir}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.contador">Contador</span></dt>
+                <dd>
+                    <span>{{tipoTerminal.contador}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.controlVisitas">Control Visitas</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + tipoTerminal.controlVisitas}}">{{tipoTerminal.controlVisitas}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.controlCobros">Control Cobros</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + tipoTerminal.controlCobros}}">{{tipoTerminal.controlCobros}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto1">Tipo Importe Dto 1</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto1}}">{{tipoTerminal.tipoImporteDto1}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto2">Tipo Importe Dto 2</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto2}}">{{tipoTerminal.tipoImporteDto2}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto3">Tipo Importe Dto 3</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto3}}">{{tipoTerminal.tipoImporteDto3}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes">Agentes</span></dt>
+                <dd>
+                    <div *ngIf="tipoTerminal.agentesId">
+                        <a [routerLink]="['/agentes-gmm', tipoTerminal.agentesId, 'view']">{{tipoTerminal.agentesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-terminal-gmm', tipoTerminal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

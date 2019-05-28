@@ -1,0 +1,78 @@
+{
+    "name": "TipoTerminal",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titulo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pathEnvio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pathRecibir",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contador",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "controlVisitas",
+            "fieldType": "DominioSiNo",
+            "fieldValues": "SI,NO"
+        },
+        {
+            "fieldName": "controlCobros",
+            "fieldType": "DominioSiNo",
+            "fieldValues": "SI,NO"
+        },
+        {
+            "fieldName": "tipoImporteDto1",
+            "fieldType": "TipoTerminalTipoImporte",
+            "fieldValues": "PORCENTAJE,IMPORTE"
+        },
+        {
+            "fieldName": "tipoImporteDto2",
+            "fieldType": "TipoTerminalTipoImporte",
+            "fieldValues": "PORCENTAJE,IMPORTE"
+        },
+        {
+            "fieldName": "tipoImporteDto3",
+            "fieldType": "TipoTerminalTipoImporte",
+            "fieldValues": "PORCENTAJE,IMPORTE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tipoEnlace",
+            "otherEntityRelationshipName": "tipoTerminal",
+            "relationshipName": "tipoEnlace"
+        },
+        {
+            "relationshipName": "agentes",
+            "otherEntityName": "agentes",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190528071141",
+    "entityTableName": "tipo_terminal",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "gmm"
+}

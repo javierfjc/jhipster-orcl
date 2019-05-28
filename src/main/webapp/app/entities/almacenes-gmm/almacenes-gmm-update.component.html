@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-almacenes-gmm-heading" jhiTranslate="jhipsterOrclApp.almacenes.home.createOrEditLabel">Create or edit a Almacenes</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!almacenes.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.codigo" for="field_codigo">Codigo</label>
+                    <input type="text" class="form-control" name="codigo" id="field_codigo"
+                           formControlName="codigo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.titulo" for="field_titulo">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" id="field_titulo"
+                           formControlName="titulo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.fechaAlta" for="field_fechaAlta">Fecha Alta</label>
+                    <div class="input-group">
+                        <input id="field_fechaAlta" type="text" class="form-control" name="fechaAlta" ngbDatepicker  #fechaAltaDp="ngbDatepicker" formControlName="fechaAlta"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaAltaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                           formControlName="estado"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.fechaEstado" for="field_fechaEstado">Fecha Estado</label>
+                    <div class="input-group">
+                        <input id="field_fechaEstado" type="text" class="form-control" name="fechaEstado" ngbDatepicker  #fechaEstadoDp="ngbDatepicker" formControlName="fechaEstado"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaEstadoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterOrclApp.almacenes.agentes" for="field_agentes">Agentes</label>
+                    <select class="form-control" id="field_agentes" name="agentes" formControlName="agentesId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agentesOption.id" *ngFor="let agentesOption of agentes; trackBy: trackAgentesById">{{agentesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

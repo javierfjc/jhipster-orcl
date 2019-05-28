@@ -1,0 +1,80 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterOrclApp.tipoTerminal.home.title">Tipo Terminals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tipo-terminal-gmm" [routerLink]="['/tipo-terminal-gmm/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipsterOrclApp.tipoTerminal.home.createLabel">
+            Create new Tipo Terminal
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tipoTerminals">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.codigo">Codigo</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.titulo">Titulo</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.descripcion">Descripcion</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.pathEnvio">Path Envio</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.pathRecibir">Path Recibir</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.contador">Contador</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.controlVisitas">Control Visitas</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.controlCobros">Control Cobros</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto1">Tipo Importe Dto 1</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto2">Tipo Importe Dto 2</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.tipoImporteDto3">Tipo Importe Dto 3</span></th>
+            <th><span jhiTranslate="jhipsterOrclApp.tipoTerminal.agentes">Agentes</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tipoTerminal of tipoTerminals ;trackBy: trackId">
+                <td><a [routerLink]="['/tipo-terminal-gmm', tipoTerminal.id, 'view' ]">{{tipoTerminal.id}}</a></td>
+                <td>{{tipoTerminal.codigo}}</td>
+                <td>{{tipoTerminal.titulo}}</td>
+                <td>{{tipoTerminal.descripcion}}</td>
+                <td>{{tipoTerminal.pathEnvio}}</td>
+                <td>{{tipoTerminal.pathRecibir}}</td>
+                <td>{{tipoTerminal.contador}}</td>
+                <td jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + tipoTerminal.controlVisitas}}">{{tipoTerminal.controlVisitas}}</td>
+                <td jhiTranslate="{{'jhipsterOrclApp.DominioSiNo.' + tipoTerminal.controlCobros}}">{{tipoTerminal.controlCobros}}</td>
+                <td jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto1}}">{{tipoTerminal.tipoImporteDto1}}</td>
+                <td jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto2}}">{{tipoTerminal.tipoImporteDto2}}</td>
+                <td jhiTranslate="{{'jhipsterOrclApp.TipoTerminalTipoImporte.' + tipoTerminal.tipoImporteDto3}}">{{tipoTerminal.tipoImporteDto3}}</td>
+                <td>
+                    <div *ngIf="tipoTerminal.agentesId">
+                        <a [routerLink]="['../agentes-gmm', tipoTerminal.agentesId , 'view' ]" >{{tipoTerminal.agentesId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/tipo-terminal-gmm', tipoTerminal.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tipo-terminal-gmm', tipoTerminal.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'tipo-terminal-gmm', { outlets: { popup: tipoTerminal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
